@@ -325,3 +325,39 @@ repository utama.
 
 Proyek pembelajaran mandiri untuk memahami manajemen proses, status
 proses, PCB, CPU Tick, antrean, dan Context Switching.
+
+---
+
+## 6. Dokumentasi Visual
+
+Bagian ini menampilkan dokumentasi visual dari aplikasi ProcessLab, mulai dari halaman beranda hingga simulasi manajemen proses dan pencatatan aktivitas.
+
+### 6.1 Halaman Beranda
+
+Tampilan utama ProcessLab yang memperkenalkan konsep manajemen proses dalam sistem operasi.
+
+![Visualisasi Siklus Hidup Proses](assets/screenshots/02-laboratorium.png)
+
+### 6.2 Visualisasi Siklus Hidup Proses
+
+Bagian ini menampilkan lima status proses dalam sistem operasi, yaitu NEW, READY, RUNNING, WAITING, dan TERMINATED.
+
+![Interactive Laboratory](assets/screenshots/02-laboratorium.png)
+
+### 6.3 Simulasi Proses Berjalan
+
+Menampilkan proses yang sedang menggunakan CPU beserta informasi Process Control Block (PCB), termasuk Process ID, Program Counter, dan Register AX.
+
+![Running Process](assets/screenshots/03-running-process.png)
+
+### 6.4 Process Queues
+
+Visualisasi Ready Queue dan Waiting Queue untuk memperlihatkan proses yang menunggu giliran CPU maupun menunggu penyelesaian I/O.
+
+![Process Queues](assets/screenshots/04-process-queues.png)
+
+### 6.5 Activity Log
+
+Riwayat aktivitas simulasi yang mencatat perubahan status proses, eksekusi instruksi, dan context switching.
+
+![Activity Log](assets/screenshots/05-activity-log.png)
