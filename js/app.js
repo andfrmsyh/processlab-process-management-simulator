@@ -778,16 +778,6 @@ function initNavigation() {
         return;
       }
 
-      const target = link.getAttribute('href') || '';
-
-      if (/^#module-\d+$/.test(target)) {
-        const moduleCard = document.querySelector(target);
-
-        if (moduleCard && !moduleCard.classList.contains('module-open')) {
-          toggleModule(target.slice(1));
-        }
-      }
-
       closeAllMenus();
     });
   });
