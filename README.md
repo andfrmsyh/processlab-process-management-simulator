@@ -1,363 +1,357 @@
 # ProcessLab
 
-## Simulator Interaktif Manajemen Proses Sistem Operasi
+## Interactive Operating System Process Management Simulator
 
-**Kelompok 3 · 2026**
+Group 3 · 2026
 
-ProcessLab adalah simulator pembelajaran berbasis web untuk membantu
-pengguna memahami siklus hidup proses, penggunaan CPU, Process Control
-Block (PCB), antrean proses, dan *context switching*. Seluruh simulasi
-dijalankan di browser sebagai model edukasi; aplikasi ini tidak
-mengelola proses Windows yang sebenarnya.
+ProcessLab is a web-based educational simulator designed to help users understand operating system process management, including process life cycles, CPU utilization, Process Control Blocks (PCB), process queues, and context switching.
 
-## 1. Fitur Utama
+All simulations run directly in the browser as an educational model. ProcessLab does not interact with or manage actual Windows operating system processes.
 
-### Beranda dan navigasi
-
--   Halaman pengenalan ProcessLab.
--   Menu **Alur Proses**, **Simulator**, dan **Materi**.
--   Tombol akses cepat untuk membuka simulator dan materi pembelajaran.
+## 1. Key Features
 
-### Visualisasi siklus hidup proses
+### Home Page and Navigation
 
-ProcessLab menampilkan lima status proses: 1. **NEW** --- proses baru
-dibuat. 2. **READY** --- proses siap dijalankan dan menunggu giliran
-CPU. 3. **RUNNING** --- proses sedang menggunakan CPU simulasi. 4.
-**WAITING** --- proses sedang menunggu I/O atau kejadian tertentu. 5.
-**TERMINATED** --- proses telah selesai dan tidak dapat dijalankan
-kembali.
-
-Jumlah proses pada setiap status diperbarui secara langsung ketika
-simulasi berubah.
-
-### Laboratorium simulator
+- An introductory page presenting ProcessLab and its purpose.
+- Navigation menus for Process Flow, Simulator, and Learning Materials.
+- Quick-access buttons for opening the simulator and learning modules.
 
-Pengguna dapat: - Membuat proses dengan nama sendiri. - Memindahkan
-proses dari NEW ke READY. - Menjalankan proses dari READY ke RUNNING
-ketika CPU kosong. - Menjalankan simulasi satu CPU Tick. - Melakukan
-Context Switch dari proses RUNNING ke proses READY. - Memindahkan proses
-RUNNING ke WAITING. - Mengembalikan proses WAITING ke READY. -
-Mengakhiri proses yang sedang RUNNING. - Memilih proses yang sedang
-menggunakan CPU untuk melihat detailnya. - Memuat skenario demo,
-mengunduh laporan, dan mereset simulasi.
+### Process Life Cycle Visualization
 
-### Pemantauan dan pencatatan
-
-Dashboard menampilkan: - Proses yang sedang menggunakan CPU. - Total
-proses. - Total CPU Tick. - Jumlah Context Switch. - Informasi PCB: PID,
-status, Program Counter (PC), Register AX, dan nama proses yang
-dipilih. - Ready Queue dan Waiting Queue. - Activity Log yang mencatat
-perubahan selama simulasi.
+ProcessLab illustrates the five fundamental process states:
 
-### Materi pembelajaran
+1. NEW — A process has been newly created.
+2. READY — A process is ready for execution and waiting for CPU allocation.
+3. RUNNING — A process is currently using the simulated CPU.
+4. WAITING — A process is waiting for I/O operations or another event.
+5. TERMINATED — A process has completed execution and cannot be executed again.
 
-Bagian Materi memuat sembilan modul: 1. Pengenalan ProcessLab. 2. Lima
-Status Proses. 3. Process Control Block (PCB). 4. CPU Execution & Tick.
-5. Context Switching. 6. Memahami Dashboard Simulator. 7. Praktik
-Langsung. 8. Laporan & Troubleshooting. 9. Batasan & Pengembangan.
+The number of processes in each state is updated dynamically whenever the simulation changes.
 
-Modul disajikan dalam kartu yang dapat dibuka dan ditutup. Tersedia juga
-contoh interaktif untuk memperlihatkan perubahan PC dan AX ketika CPU
-Tick dijalankan.
+### Interactive Simulator Laboratory
 
-## 2. Teknologi yang Digunakan
+Users can:
 
--   **HTML5** untuk struktur halaman.
--   **CSS3** untuk tampilan, tata letak, animasi, dan responsivitas.
--   **JavaScript** untuk logika simulasi dan interaksi.
--   **Google Fonts (Poppins)** untuk tipografi, dengan font cadangan
-    jika font daring tidak tersedia.
+- Create processes with custom names.
+- Move processes from NEW to READY.
+- Dispatch processes from READY to RUNNING when the CPU is idle.
+- Execute one simulated CPU Tick at a time.
+- Perform Context Switching between RUNNING and READY processes.
+- Move RUNNING processes to WAITING.
+- Return WAITING processes to READY.
+- Terminate currently running processes.
+- Select processes to inspect their information.
+- Load predefined demonstration scenarios.
+- Download simulation reports.
+- Reset the simulation.
 
-HTML, CSS, dan JavaScript tertanam dalam satu file. Logika simulator
-tidak membutuhkan framework, instalasi package, database, backend, atau
-web server.
+### Monitoring and Activity Logging
 
-## 3. Cara Menjalankan
+The dashboard provides real-time information, including:
 
-1.  Unduh atau clone repository.
-2.  Pastikan file program utama bernama `index.html`.
-3.  Buka `index.html` menggunakan browser modern, misalnya Google
-    Chrome, Microsoft Edge, atau Brave.
-4.  Klik **Buka Simulator** atau menu **Simulator** untuk menuju
-    laboratorium.
-5.  Klik **Siapkan Demo** untuk memuat skenario contoh, atau buat proses
-    sendiri dengan tombol **+ Buat Proses**.
+- Currently running CPU process.
+- Total number of processes.
+- Total CPU Ticks.
+- Total Context Switches.
+- Process Control Block (PCB) information:
+  - Process ID (PID)
+  - Process State
+  - Program Counter (PC)
+  - AX Register
+  - Selected Process Name
+- Ready Queue and Waiting Queue.
+- Activity Log recording simulation events and process state changes.
 
-Program dapat dijalankan secara lokal dengan membuka file HTML langsung
-di browser. Koneksi internet tidak diperlukan untuk logika simulasi.
-Koneksi internet hanya membantu memuat font Poppins dari Google Fonts;
-jika tidak tersedia, browser menggunakan font cadangan.
+### Learning Materials
 
-### Jika file masih bernama `.txt`
+The learning section contains nine educational modules:
 
-File teks yang berisi source code HTML tidak dapat dijalankan sebagai
-halaman web hanya dengan dibuka sebagai `.txt`. Buka file tersebut di
-Visual Studio Code, lalu gunakan **Save As** dan simpan dengan nama
-`index.html`. Pastikan ekstensi akhirnya `.html`, bukan `.txt`.
+1. Introduction to ProcessLab.
+2. The Five Process States.
+3. Process Control Block (PCB).
+4. CPU Execution and Tick.
+5. Context Switching.
+6. Understanding the Simulator Dashboard.
+7. Hands-on Practice.
+8. Reports and Troubleshooting.
+9. Limitations and Future Development.
 
-## 4. Cara Menggunakan Simulator
+Each module is presented in an expandable card. Interactive examples are also provided to demonstrate how PC and AX values change during CPU Tick execution.
 
-### A. Membuat dan menjalankan proses
+## 2. Technologies Used
 
-1.  Masukkan nama proses pada kolom nama proses.
-2.  Klik **+ Buat Proses**. Proses baru akan berstatus NEW.
-3.  Pilih proses tersebut, lalu klik **New → Ready**.
-4.  Ketika CPU kosong, klik **Ready → Running**.
-5.  Klik **Eksekusi 1 Tick** untuk menjalankan satu unit simulasi.
-6.  Amati perubahan PC, AX, CPU Tick, PCB, dan Activity Log.
+| Technology | Purpose |
+|---|---|
+| HTML5 | Defines the application structure and content. |
+| CSS3 | Handles styling, layout, animations, and responsive design. |
+| JavaScript | Implements simulation logic and user interactions. |
+| Google Fonts (Poppins) | Provides the primary typography. |
 
-### B. Mencoba I/O
+The application uses a lightweight architecture without requiring additional frameworks, package installations, databases, backend services, or a dedicated web server.
 
-1.  Pastikan proses yang dipilih sedang RUNNING.
-2.  Klik **Running → Waiting**.
-3.  Pilih kembali proses tersebut jika diperlukan.
-4.  Klik **Waiting → Ready** untuk menyimulasikan selesainya I/O.
-5.  Jika CPU kosong, proses dapat dijalankan kembali melalui **Ready →
-    Running**.
+The HTML, CSS, and JavaScript files are organized separately to improve code readability, maintainability, and project organization.
 
-### C. Mencoba Context Switch
+## 3. Getting Started
 
-1.  Siapkan satu proses RUNNING.
-2.  Siapkan setidaknya satu proses lain dengan status READY.
-3.  Pilih proses READY yang akan menerima CPU.
-4.  Klik **Context Switch** satu kali.
-5.  Amati bahwa proses lama berubah menjadi READY dan proses target
-    menjadi RUNNING.
+### Requirements
 
-**Penting:** memilih baris proses hanya mengubah proses yang sedang
-dipantau. Memilih proses tidak dengan sendirinya memindahkan penggunaan
-CPU. Perpindahan CPU terjadi ketika tombol **Context Switch**
-dijalankan.
+- A modern web browser, such as Google Chrome, Microsoft Edge, or Brave.
+- The ProcessLab project files.
 
-### D. Mengakhiri proses
+### Installation and Execution
 
-Pilih proses yang sedang RUNNING, lalu klik **Selesaikan Proses**.
-Statusnya berubah menjadi TERMINATED dan proses tersebut tidak dapat
-dijalankan kembali dalam simulasi ini.
+1. Download or clone this repository.
+2. Make sure the project directory structure remains intact.
+3. Locate the `index.html` file in the root directory.
+4. Open `index.html` using a modern web browser.
+5. Click Open Simulator or select the Simulator navigation menu to access the laboratory.
+6. Click Load Demo to explore the predefined scenario, or create your own processes using + Create Process.
 
-### E. Fungsi tombol
+ProcessLab can run locally by opening the HTML file directly in a browser.
 
-  -----------------------------------------------------------------------
-  Tombol                              Fungsi
-  ----------------------------------- -----------------------------------
-  `+ Buat Proses`                     Membuat proses baru dengan status
-                                      NEW.
+An internet connection is not required for the simulation logic. However, an internet connection is recommended to load the Poppins font from Google Fonts. A fallback font will be used if the online font is unavailable.
 
-  `New → Ready`                       Memindahkan proses NEW ke READY.
+## 4. How to Use the Simulator
 
-  `Ready → Running`                   Menjalankan proses READY jika CPU
-                                      kosong.
+### A. Creating and Running a Process
 
-  `Eksekusi 1 Tick`                   Menjalankan satu unit eksekusi
-                                      simulasi.
+1. Enter a process name in the process name field.
+2. Click + Create Process. The new process will initially have the NEW state.
+3. Select the process and click New → Ready.
+4. When the CPU is idle, click Ready → Running.
+5. Click Execute 1 Tick to perform one unit of simulated execution.
+6. Observe changes in the PC, AX, CPU Tick, PCB, and Activity Log.
 
-  `Context Switch`                    Mengalihkan CPU dari proses RUNNING
-                                      ke proses READY.
+### B. Simulating I/O Operations
 
-  `Running → Waiting`                 Memindahkan proses RUNNING ke
-                                      WAITING.
+1. Make sure the selected process is currently RUNNING.
+2. Click Running → Waiting.
+3. Select the process again if necessary.
+4. Click Waiting → Ready to simulate the completion of an I/O operation.
+5. If the CPU is idle, the process can be executed again through Ready → Running.
 
-  `Waiting → Ready`                   Mengembalikan proses WAITING ke
-                                      READY.
+### C. Performing Context Switching
 
-  `Selesaikan Proses`                 Mengubah proses RUNNING menjadi
-                                      TERMINATED.
+1. Prepare one process in the RUNNING state.
+2. Prepare at least one additional process in the READY state.
+3. Select the READY process that will receive CPU allocation.
+4. Click Context Switch once.
+5. Observe how the previous process changes to READY and the target process becomes RUNNING.
 
-  `Pilih Proses CPU`                  Memilih proses yang sedang
-                                      menggunakan CPU untuk ditampilkan
-                                      pada PCB.
+Important: Selecting a process only changes the process being monitored. It does not automatically transfer CPU allocation. The actual CPU transfer occurs when the Context Switch button is executed.
 
-  `Siapkan Demo`                      Mengganti simulasi aktif dengan
-                                      skenario demo tiga proses.
+### D. Terminating a Process
 
-  `Unduh Hasil`                       Mengunduh laporan simulasi dalam
-                                      format TXT.
+Select the currently RUNNING process and click Finish Process.
 
-  `Reset`                             Menghapus proses, penghitung, dan
-                                      riwayat simulasi.
-  -----------------------------------------------------------------------
+Its state will change to TERMINATED, and it cannot be executed again within the simulation.
 
-## 5. Aturan Simulasi
+### E. Simulator Controls
 
-### CPU Tick, PC, dan AX
+| Button | Function |
+|---|---|
+| `+ Create Process` | Creates a new process in the NEW state. |
+| `New → Ready` | Moves a process from NEW to READY. |
+| `Ready → Running` | Executes a READY process when the CPU is idle. |
+| `Execute 1 Tick` | Performs one unit of simulated CPU execution. |
+| `Context Switch` | Transfers CPU allocation from the RUNNING process to a READY process. |
+| `Running → Waiting` | Moves the RUNNING process to WAITING. |
+| `Waiting → Ready` | Returns a WAITING process to READY. |
+| `Finish Process` | Changes the RUNNING process to TERMINATED. |
+| `Select CPU Process` | Selects the process currently using the CPU for PCB monitoring. |
+| `Load Demo` | Loads the predefined three-process demonstration scenario. |
+| `Download Results` | Downloads the simulation report in TXT format. |
+| `Reset` | Clears processes, counters, and simulation history. |
 
-Setiap kali **Eksekusi 1 Tick** ditekan pada proses RUNNING: - PC
-bertambah 1. - AX bertambah 3 dengan perhitungan modulo 256. - Jumlah
-tick proses bertambah 1. - Total CPU Tick bertambah 1.
+## 5. Simulation Rules
 
-Rumus perubahan AX pada simulator:
+### CPU Tick, PC, and AX
 
-`AX baru = (AX lama + 3) % 256`
+Whenever Execute 1 Tick is clicked while a process is RUNNING:
 
-Nilai PC dan AX merupakan angka ilustrasi yang dikelola JavaScript,
-bukan pembacaan register CPU fisik.
+- PC increases by 1.
+- AX increases by 3 using modulo 256.
+- The process execution tick count increases by 1.
+- The total CPU Tick count increases by 1.
 
-### Context Switch
+The AX calculation follows this formula:
 
-Context Switch hanya dapat dilakukan jika terdapat: - Satu proses yang
-sedang RUNNING; dan - Sedikitnya satu proses berstatus READY.
+```javascript
+AX_new = (AX_old + 3) % 256;
+```
 
-Jika proses yang dipilih berstatus READY, proses tersebut menjadi target
-perpindahan. Jika tidak, simulator menggunakan proses READY pertama yang
-ditemukan. Proses RUNNING sebelumnya berubah menjadi READY, proses
-target menjadi RUNNING, dan penghitung Context Switch bertambah satu.
+PC and AX values are illustrative values managed by JavaScript. They do not represent actual physical CPU register readings.
 
-Context Switch tidak menambah CPU Tick karena tindakan tersebut
-merupakan perpindahan proses, bukan eksekusi satu tick.
+### Context Switching
 
-### Batas data simulasi
+Context Switching can only be performed when the following conditions are met:
 
--   Jumlah proses yang dapat dibuat dibatasi hingga **30 proses**.
--   Kolom nama proses menerima maksimal **40 karakter**.
--   Activity Log menyimpan maksimal **80 peristiwa terbaru** selama sesi
-    berjalan.
--   PID dimulai dari 1001 dan kembali ke 1001 setelah Reset.
--   Data simulasi disimpan sementara di memori halaman browser, bukan di
-    database atau penyimpanan permanen.
+- One process is currently RUNNING.
+- At least one other process is in the READY state.
 
-## 6. Skenario Demo Bawaan
+If the selected process is READY, it becomes the target of the context switch. Otherwise, the simulator selects the first available READY process.
 
-Tombol **Siapkan Demo** memuat tiga proses berikut:
+During a successful Context Switch:
 
-     PID Nama Proses      Status      PC   AX   Tick Proses
-  ------ ---------------- --------- ---- ---- -------------
-    1001 Editor Dokumen   RUNNING      8   24             8
-    1002 Browser          READY        3    9             3
-    1003 Pemutar Musik    WAITING      4   12             4
+- The previous RUNNING process changes to READY.
+- The target process changes to RUNNING.
+- The Context Switch counter increases by one.
 
-Kondisi awal demo: - Total proses: **3** - CPU Tick: **15** - Context
-Switch: **0** - Proses yang menggunakan CPU: **Editor Dokumen** - Proses
-yang dipilih: **Browser**
+Context Switching does not increase the CPU Tick count because it represents process allocation transfer rather than execution of a CPU Tick.
 
-Setelah Browser dipilih dan tombol **Context Switch** ditekan satu
-kali: - Editor Dokumen berubah dari RUNNING menjadi READY. - Browser
-berubah dari READY menjadi RUNNING. - Pemutar Musik tetap WAITING. - CPU
-saat ini menggunakan Browser (PID 1002). - Context Switch menjadi
-**1**. - CPU Tick tetap **15** sampai tombol Eksekusi 1 Tick dijalankan.
+### Simulation Data Limits
 
-## 7. Mengunduh Laporan Simulasi
+- Maximum number of processes: 30.
+- Maximum process name length: 40 characters.
+- Activity Log capacity: 80 most recent events per session.
+- Initial PID: 1001.
+- PID numbering restarts from 1001 after Reset.
+- Simulation data is temporarily stored in browser memory, not in a database or permanent storage.
 
-Klik **Unduh Hasil** untuk membuat file:
+## 6. Built-in Demonstration Scenario
+
+Clicking Load Demo loads the following three processes:
+
+| PID | Process Name | State | PC | AX | Process Ticks |
+|---|---|---|---:|---:|---:|
+| 1001 | Document Editor | RUNNING | 8 | 24 | 8 |
+| 1002 | Browser | READY | 3 | 9 | 3 |
+| 1003 | Music Player | WAITING | 4 | 12 | 4 |
+
+Initial demonstration conditions:
+
+- Total Processes: 3
+- CPU Tick: 15
+- Context Switch: 0
+- Currently Running Process: Document Editor
+- Selected Process: Browser
+
+After selecting Browser and clicking Context Switch once:
+
+- Document Editor changes from RUNNING to READY.
+- Browser changes from READY to RUNNING.
+- Music Player remains in WAITING.
+- The CPU is now allocated to Browser (PID 1002).
+- Context Switch count becomes 1.
+- CPU Tick remains 15 until Execute 1 Tick is clicked.
+
+## 7. Downloading Simulation Reports
+
+Click Download Results to generate the following file:
 
 `hasil_simulasi_kelompok_3.txt`
 
-Laporan memuat: - Tanggal dan waktu pembuatan laporan. - Total proses. -
-CPU Tick. - Jumlah Context Switch. - Data PCB setiap proses: PID, nama,
-status, PC, AX, dan tick proses. - Riwayat aktivitas simulasi.
+The report includes:
 
-Laporan dibuat berdasarkan kondisi saat tombol diklik. Karena itu, hasil
-laporan dapat berbeda antara satu sesi dan sesi lainnya.
+- Report generation date and time.
+- Total number of processes.
+- CPU Tick count.
+- Context Switch count.
+- PCB information for every process, including PID, name, state, PC, AX, and process ticks.
+- Simulation activity history.
 
-Jika belum ada proses, simulator menampilkan pemberitahuan bahwa belum
-ada hasil simulasi dan tidak membuat file laporan.
+The report reflects the simulator's current state at the time of download. Therefore, report contents may differ between simulation sessions.
 
-## 8. Batasan Program
+If no process has been created, the simulator displays a notification indicating that there are no simulation results to export and does not generate a report file.
 
-ProcessLab merupakan simulator edukasi dengan batasan berikut: - Tidak
-membaca, menjalankan, atau mengendalikan proses asli Windows. - Tidak
-menggantikan Task Manager atau sistem operasi. - Memodelkan satu CPU
-simulasi, sehingga hanya satu proses yang berstatus RUNNING pada satu
-waktu. - Belum menerapkan penjadwalan otomatis lengkap seperti FCFS atau
-Round Robin. - Nilai PID, PC, AX, dan tick merupakan data model untuk
-pembelajaran. - Data sesi tidak disimpan secara permanen. Refresh atau
-pemuatan ulang halaman akan mengembalikan simulasi ke kondisi awal.
+## 8. Program Limitations
 
-FCFS, Round Robin, penjelasan visual tambahan, dan penyimpanan riwayat
-merupakan ide pengembangan selanjutnya, bukan fitur yang sudah tersedia
-pada versi ini.
+ProcessLab is an educational simulator with the following limitations:
+
+- It does not read, execute, or control actual Windows processes.
+- It is not intended to replace Windows Task Manager or an operating system.
+- It models a single simulated CPU, allowing only one process to be in the RUNNING state at a time.
+- It does not yet implement complete automatic scheduling algorithms such as FCFS or Round Robin.
+- PID, PC, AX, and CPU Tick values are illustrative simulation data.
+- Simulation data is not permanently stored. Refreshing or reloading the page resets the simulation.
+
+FCFS, Round Robin, additional visual explanations, and persistent simulation history are potential future improvements, not currently implemented features.
 
 ## 9. Troubleshooting
 
-  -----------------------------------------------------------------------
-  Kendala                             Solusi
-  ----------------------------------- -----------------------------------
-  File terbuka sebagai teks/kode      Pastikan file disimpan dengan
-                                      ekstensi `.html`, misalnya
-                                      `index.html`.
+| Issue | Recommended Solution |
+|---|---|
+| The file opens as plain text or source code. | Make sure the file has the `.html` extension, such as `index.html`. |
+| Action buttons are disabled. | Check the selected process state and CPU availability. Buttons are only enabled when their required conditions are met. |
+| Context Switch cannot be performed. | Make sure one process is RUNNING and at least one other process is READY. |
+| The CPU remains idle. | Create a process, move it to READY, and then click Ready → Running. |
+| Download Results does not generate a file. | Make sure at least one process has been created. Check the browser's download folder and download permissions. |
+| Simulation data disappears after refreshing. | Simulation data is stored temporarily in browser memory. Download the TXT report before refreshing if you need to keep the results. |
+| The font looks different. | Check your internet connection to load Poppins. If unavailable, the browser will use a fallback font. |
 
-  Tombol aksi tidak aktif             Periksa status proses yang dipilih
-                                      dan kondisi CPU. Tombol hanya aktif
-                                      jika syarat aksinya terpenuhi.
+## 10. Repository Structure
 
-  Context Switch tidak dapat          Pastikan ada satu proses RUNNING
-  dilakukan                           dan minimal satu proses READY.
+The project files are organized as follows:
 
-  CPU masih Idle                      Buat proses, pindahkan ke READY,
-                                      lalu jalankan dengan **Ready →
-                                      Running**.
-
-  Unduh Hasil tidak menghasilkan file Pastikan setidaknya satu proses
-                                      sudah dibuat. Periksa folder
-                                      unduhan dan izin unduhan browser.
-
-  Data hilang setelah refresh         Data hanya tersimpan selama halaman
-                                      berjalan. Unduh laporan TXT sebelum
-                                      refresh jika hasil dibutuhkan.
-
-  Font terlihat berbeda               Pastikan koneksi internet tersedia
-                                      untuk memuat Poppins. Tanpa
-                                      internet, browser memakai font
-                                      cadangan.
-  -----------------------------------------------------------------------
-
-## 10. Struktur Repository yang Disarankan
-
-``` text
+```text
 processlab-process-management-simulator/
+│
+├── assets/
+│   ├── README.md
+│   └── screenshots/
+│       ├── 01-beranda.png
+│       ├── 02-laboratorium.png
+│       ├── 03-running-process.png
+│       ├── 04-process-queues.png
+│       └── 05-activity-log.png
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── app.js
+│
 ├── README.md
 └── index.html
 ```
 
-Gunakan satu file HTML final sebagai program utama. File
-`KODE VSCODE LANGSUNG TEMPEL(2).txt` yang diperiksa bersama file HTML
-berisi source code yang sama setelah perbedaan format baris diabaikan.
-Karena itu, keduanya tidak perlu diunggah sebagai dua versi program yang
-berbeda.
+### File and Directory Description
 
-Untuk repository GitHub, disarankan: - Simpan dokumentasi ini sebagai
-`README.md`. - Simpan program final sebagai `index.html`. - Hindari
-mengunggah file backup atau salinan source code yang isinya duplikat ke
-repository utama.
+- `index.html` — Main application structure and entry point.
+- `css/style.css` — Application styling, layout, animations, and responsive design.
+- `js/app.js` — Simulator logic, process management, CPU execution, event handling, and interface interactions.
+- `assets/` — Supporting project assets and visual documentation.
+- `assets/screenshots/` — Application screenshots used for project documentation.
+- `README.md` — Main project documentation.
 
-------------------------------------------------------------------------
+The separation of HTML, CSS, and JavaScript helps maintain a cleaner and more manageable codebase.
 
-**ProcessLab · Simulasi Sistem Operasi · Kelompok 3 · 2026**
+## 11. Visual Documentation
 
-Proyek pembelajaran mandiri untuk memahami manajemen proses, status
-proses, PCB, CPU Tick, antrean, dan Context Switching.
+This section presents the visual documentation of ProcessLab, covering the home page, interactive simulator, process execution, process queues, and activity logging.
 
----
+### 11.1 Home Page
 
-## 6. Dokumentasi Visual
+The main landing page introduces ProcessLab and provides an overview of the simulator and its learning objectives.
 
-Bagian ini menampilkan dokumentasi visual dari aplikasi ProcessLab, mulai dari halaman beranda hingga simulasi manajemen proses dan pencatatan aktivitas.
+![ProcessLab Home Page](assets/screenshots/01-beranda.png)
 
-### 6.1 Halaman Beranda
+### 11.2 Interactive Laboratory and Process Lifecycle
 
-Tampilan utama ProcessLab yang memperkenalkan konsep manajemen proses dalam sistem operasi.
-
-![Visualisasi Siklus Hidup Proses](assets/screenshots/02-laboratorium.png)
-
-### 6.2 Visualisasi Siklus Hidup Proses
-
-Bagian ini menampilkan lima status proses dalam sistem operasi, yaitu NEW, READY, RUNNING, WAITING, dan TERMINATED.
+This section presents the interactive simulation environment and the process management interface.
 
 ![Interactive Laboratory](assets/screenshots/02-laboratorium.png)
 
-### 6.3 Simulasi Proses Berjalan
+### 11.3 Running Process
 
-Menampilkan proses yang sedang menggunakan CPU beserta informasi Process Control Block (PCB), termasuk Process ID, Program Counter, dan Register AX.
+Displays the process currently using the CPU, together with its Process Control Block (PCB), including Process ID, Program Counter, and AX Register.
 
 ![Running Process](assets/screenshots/03-running-process.png)
 
-### 6.4 Process Queues
+### 11.4 Process Queues
 
-Visualisasi Ready Queue dan Waiting Queue untuk memperlihatkan proses yang menunggu giliran CPU maupun menunggu penyelesaian I/O.
+Visualizes the Ready Queue and Waiting Queue, showing processes waiting for CPU allocation or I/O completion.
 
 ![Process Queues](assets/screenshots/04-process-queues.png)
 
-### 6.5 Activity Log
+### 11.5 Activity Log
 
-Riwayat aktivitas simulasi yang mencatat perubahan status proses, eksekusi instruksi, dan context switching.
+Displays the simulation activity history, including process state transitions, CPU execution, and context switching events.
 
 ![Activity Log](assets/screenshots/05-activity-log.png)
+
+---
+
+ProcessLab · Operating System Process Management Simulator · Group 3 · 2026
+
+An educational project developed to explore process management, process states, Process Control Blocks, CPU execution, process queues, and context switching.
